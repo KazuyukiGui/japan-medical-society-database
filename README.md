@@ -4,13 +4,13 @@
 
 ## 概要 / Overview
 
-日本の医学系学会200団体の包括的なマスタデータベースです。医療機関の資格管理、医師の専門性管理などにご利用いただけます。
+日本の医学系学会197団体の包括的なマスタデータベースです。医療機関の資格管理、医師の専門性管理などにご利用いただけます。
 
-Comprehensive master database of 200 Japanese medical societies for healthcare institutions and medical professionals.
+Comprehensive master database of 197 Japanese medical societies for healthcare institutions and medical professionals.
 
 ## 特徴 / Features
 
-- **200学会を網羅** - 基本領域19学会、サブスペシャルティ26学会、その他155学会
+- **197学会を網羅** - 基本領域19学会、サブスペシャルティ26学会、その他155学会
 - **定期更新** - コミュニティによる継続的な更新
 - **オープンデータ** - CC BY 4.0ライセンスで自由に利用可能
 - **コミュニティ駆動** - 誰でも貢献可能
@@ -64,7 +64,7 @@ print(basic_societies[['学会ID', '正式名称', '略称']])
 
 ## プロジェクト統計 / Statistics
 
-- 収録学会数: 200
+- 収録学会数: 197
 - 基本領域: 19学会
 - サブスペシャルティ: 26学会
 - 最終更新: 2024年1月
