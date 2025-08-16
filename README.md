@@ -20,7 +20,7 @@ Comprehensive master database of 197 Japanese medical societies for healthcare i
 ### CSVファイルの直接利用
 ```bash
 # 最新版のダウンロード
-curl -O https://raw.githubusercontent.com/[YOUR_USERNAME]/japan-medical-society-database/main/data/societies_master.csv
+curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/societies_master.csv
 ```
 
 ### Pythonでの利用例
@@ -28,7 +28,7 @@ curl -O https://raw.githubusercontent.com/[YOUR_USERNAME]/japan-medical-society-
 import pandas as pd
 
 # GitHubから直接読み込み
-url = "https://raw.githubusercontent.com/[YOUR_USERNAME]/japan-medical-society-database/main/data/societies_master.csv"
+url = "https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/societies_master.csv"
 df = pd.read_csv(url)
 
 # 基本領域の学会のみ抽出
@@ -54,7 +54,7 @@ print(basic_societies[['学会ID', '正式名称', '略称']])
 このプロジェクトへの貢献を歓迎します！
 
 ### データの誤りを報告
-1. [Issues](https://github.com/[YOUR_USERNAME]/japan-medical-society-database/issues)で報告
+1. [Issues](https://github.com/KazuyukiGui/japan-medical-society-database/issues)で報告
 2. 学会名、誤っている内容、正しい内容を記載
 
 ### データの追加・修正を提案
@@ -86,8 +86,8 @@ Japan Medical Society Database is licensed under CC BY 4.0
 
 ## 連絡先 / Contact
 
-- Issues: [GitHub Issues](https://github.com/[YOUR_USERNAME]/japan-medical-society-database/issues)
-- Discussions: [GitHub Discussions](https://github.com/[YOUR_USERNAME]/japan-medical-society-database/discussions)
+- Issues: [GitHub Issues](https://github.com/KazuyukiGui/japan-medical-society-database/issues)
+- Discussions: [GitHub Discussions](https://github.com/KazuyukiGui/japan-medical-society-database/discussions)
 
 ---
 
