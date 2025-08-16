@@ -91,5 +91,5 @@ Japan Medical Society Database is licensed under CC BY 4.0
 
 ---
 
-**みんなで育てる、みんなのための医学会データベース**
+**みんなで育てる、みんなのための医学会データベース**  
 *Together, we build the future of medical information in Japan*
