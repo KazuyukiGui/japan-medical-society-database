@@ -83,7 +83,6 @@ Japan Medical Society Database is licensed under CC BY 4.0
 ## 連絡先 / Contact
 
 - Issues: [GitHub Issues](https://github.com/KazuyukiGui/japan-medical-society-database/issues)
-- Discussions: [GitHub Discussions](https://github.com/KazuyukiGui/japan-medical-society-database/discussions)
 
 ---
 
