@@ -4,13 +4,14 @@
 
 ## 概要 (Overview)
 
-日本の医学系学会197団体の情報を網羅したマスターデータベースです。医療機関における所属医師の資格管理や、医師の専門性情報の管理など、幅広い用途にご利用いただけます。
+日本の医学系学会199団体と医師資格137種類の情報を網羅したマスターデータベースです。医療機関における所属医師の資格管理や、医師の専門性情報の管理など、幅広い用途にご利用いただけます。
 
-This is a comprehensive master database of 197 Japanese medical societies, designed for healthcare institutions and medical professionals.
+This is a comprehensive master database of 199 Japanese medical societies and 137 medical qualifications, designed for healthcare institutions and medical professionals.
 
 ## 主な特徴 (Features)
 
-- **197学会の情報を収録**: 基本領域19学会、サブスペシャルティ26学会、その他155学会を網羅しています。
+- **199学会・137資格の情報を収録**: 基本領域19学会、サブスペシャルティ26学会、関連学会152学会、認定団体2団体を網羅しています。
+- **体系的な資格マスター**: 専門医73種、指導医39種、認定医22種など、医師資格を体系的に整理しています。
 - **継続的な更新**: コミュニティからの情報提供により、データを定期的に更新しています。
 - **オープンデータ**: [CC BY 4.0ライセンス](https://creativecommons.org/licenses/by/4.0/)に基づき、どなたでも自由に利用できます。
 - **コミュニティ主体**: 皆さまからの情報提供によって成り立つプロジェクトです。
@@ -19,35 +20,60 @@ This is a comprehensive master database of 197 Japanese medical societies, desig
 
 ### CSVファイルを直接ダウンロードする
 ```bash
-# 最新版のデータをダウンロード
+# 学会マスターをダウンロード
 curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/societies_master.csv
+
+# 資格マスターをダウンロード
+curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/qualifications_master.csv
 ```
 
 ### Pythonでの利用例
 ```python
 import pandas as pd
 
-# GitHubリポジトリから直接データを読み込む
-url = "https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/societies_master.csv"
-df = pd.read_csv(url)
+# 学会マスターを読み込む
+societies_url = "https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/societies_master.csv"
+societies_df = pd.read_csv(societies_url)
+
+# 資格マスターを読み込む
+qualifications_url = "https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/qualifications_master.csv"
+qualifications_df = pd.read_csv(qualifications_url)
 
 # 「基本領域」に分類される学会を抽出
-basic_societies = df[df['カテゴリ'] == '基本領域']
+basic_societies = societies_df[societies_df['カテゴリ'] == '基本領域']
 print(basic_societies[['学会ID', '正式名称', '略称']])
+
+# 内科系の専門医資格を抽出
+internal_medicine_specialists = qualifications_df[
+    (qualifications_df['基本領域'] == '内科') & 
+    (qualifications_df['資格種別'] == '専門医')
+]
+print(internal_medicine_specialists[['資格ID', '資格名称']])
 ```
 
 ## データ構造 (Data Structure)
 
+### 学会マスター (societies_master.csv)
 | フィールド名 | 型 | 説明 | 例 |
 |:---|:---|:---|:---|
 | 学会ID | String | 各学会に割り当てられた一意なID | `SOC_00001` |
 | 正式名称 | String | 法人格を含む正式名称 | 一般社団法人日本内科学会 |
 | 略称 | String | 一般的に使われる略称 | 内科学会 |
-| カテゴリ | String | 学会の分類 | 基本領域/サブスペ/その他 |
+| カテゴリ | String | 学会の分類 | 基本領域/サブスペ（内科系）/関連学会 |
 | 最終確認日 | Date | データの最終確認日 | `2024-08-01` |
 | データソース | String | 情報の出典元 | 専門医機構概報2024 |
 
-詳細は[data/societies_master.csv](data/societies_master.csv)をご覧ください。
+### 資格マスター (qualifications_master.csv)
+| フィールド名 | 型 | 説明 | 例 |
+|:---|:---|:---|:---|
+| 資格ID | String | 各資格に割り当てられた一意なID | `Q001` |
+| 学会ID | String | 管理学会のID | `SOC_00001` |
+| 資格名称 | String | 資格の正式名称 | 内科専門医 |
+| 資格種別 | String | 資格の種類 | 専門医/指導医/認定医 |
+| 制度区分 | String | 制度の区分 | 新専門医制度/共通/旧制度 |
+| 基本領域 | String | 基本となる診療領域 | 内科 |
+
+詳細は[data/societies_master.csv](data/societies_master.csv)および[data/qualifications_master.csv](data/qualifications_master.csv)をご覧ください。
 
 ## 本プロジェクトへのご協力について
 
@@ -64,10 +90,17 @@ print(basic_societies[['学会ID', '正式名称', '略称']])
 
 ## プロジェクトの状況 (Statistics)
 
-- **収録学会数**: 197
-- **基本領域**: 19学会
-- **サブスペシャルティ**: 26学会
-- **最終更新**: 2024年1月
+- **収録学会数**: 199
+  - **基本領域**: 19学会
+  - **サブスペシャルティ**: 26学会（内科系15、外科系6、その他5）
+  - **関連学会**: 152学会
+  - **認定団体**: 2団体
+- **収録資格数**: 137
+  - **専門医**: 73種
+  - **指導医**: 39種
+  - **認定医**: 22種
+  - **その他**: 3種
+- **最終更新**: 2024年8月
 
 ## ライセンス (License)
 
