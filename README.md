@@ -49,10 +49,6 @@ print(basic_societies[['学会ID', '正式名称', '略称']])
 
 詳細は[data/societies_master.csv](data/societies_master.csv)をご確認ください。
 
-## 貢献方法 / Contributing
-
-このプロジェクトへの貢献を歓迎します！
-
 ### データの誤りを報告
 1. [Issues](https://github.com/KazuyukiGui/japan-medical-society-database/issues)で報告
 2. 学会名、誤っている内容、正しい内容を記載
