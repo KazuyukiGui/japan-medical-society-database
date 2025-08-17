@@ -2,11 +2,24 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
+## 🔍 検索サイト
+
+**[日本の医学会・専門医資格 検索データベース](https://sites.google.com/view/med-db-jp/)**  
+このデータベースを簡単に検索・閲覧できるWebサイトを公開しています。
+
 ## 概要 (Overview)
 
 日本の医学系学会199団体と医師資格137種類の情報を網羅したマスターデータベースです。医療機関における所属医師の資格管理や、医師の専門性情報の管理など、幅広い用途にご利用いただけます。
 
 This is a comprehensive master database of 199 Japanese medical societies and 137 medical qualifications, designed for healthcare institutions and medical professionals.
+
+## なぜこのプロジェクトを作ったか
+
+病院で医師の資格管理をするたびに、どこにも正確なマスターデータがなくて本当に苦労していました。「誰か作って公開してくれないかな…」とずっと思っていたのですが、もう待てないので自分で作ることにしました。
+
+特に、日々の資格管理に追われる事務の方の苦労を、少しでも楽にできれば。それが、このマスタの一番の目的です。
+
+この活動を一時的なものではなく、情報を持ち寄り、**日本の医療界の「当たり前のインフラ」に育てていきたい**と本気で思っています。
 
 ## 主な特徴 (Features)
 
@@ -16,9 +29,29 @@ This is a comprehensive master database of 199 Japanese medical societies and 13
 - **オープンデータ**: [CC BY 4.0ライセンス](https://creativecommons.org/licenses/by/4.0/)に基づき、どなたでも自由に利用できます。
 - **コミュニティ主体**: 皆さまからの情報提供によって成り立つプロジェクトです。
 
+## 活用事例
+
+### 🏥 病院での資格管理
+- 医師の専門医資格の有効期限管理
+- 標榜科目と専門医資格の整合性確認
+- 新規採用医師の資格確認
+
+### 📊 データ分析
+- 診療科別の専門医分布の分析
+- 医師の専門性の可視化
+- 地域医療計画の基礎データとして
+
+### 🏢 その他の活用
+- ヘルスケア企業での医師データベース構築
+- 医療系スタートアップでの医師マッチング
+- 研究機関での医療人材分析
+
 ## 利用方法 (Usage)
 
-### CSVファイルを直接ダウンロードする
+### 🔍 Webサイトで検索する
+[検索サイト](https://sites.google.com/view/med-db-jp/)で学会名や資格名から簡単に検索できます。
+
+### 📥 CSVファイルを直接ダウンロードする
 ```bash
 # 学会マスターをダウンロード
 curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/societies_master.csv
@@ -26,6 +59,18 @@ curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-data
 # 資格マスターをダウンロード
 curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/qualifications_master.csv
 ```
+
+### 📊 Excel/Googleスプレッドシートでの利用例
+
+1. CSVファイルをダウンロード
+2. Excel/スプレッドシートで開く
+3. VLOOKUPやフィルタ機能で必要な情報を抽出
+
+**例：内科系の学会を抽出する**
+- フィルタ機能で「領域詳細」列を「内科系」でフィルタリング
+
+**例：特定の学会の資格を調べる**
+- 資格マスターで「学会ID」を使ってVLOOKUP
 
 ### Pythonでの利用例
 ```python
@@ -77,9 +122,17 @@ print(internal_medicine_specialists[['資格ID', '資格名称']])
 
 ## 本プロジェクトへのご協力について
 
-### データの間違いを報告する
-1. [Issuesページ](https://github.com/KazuyukiGui/japan-medical-society-database/issues)で報告してください。
-2. 学会名、誤っている箇所、正しい内容を記載してください。
+### 💬 フィードバックをお待ちしています
+
+#### 簡単な報告方法
+- 間違いを見つけた
+- こんな情報も追加してほしい  
+- 使い方がわからない
+
+→ [Issues](https://github.com/KazuyukiGui/japan-medical-society-database/issues) で「New issue」をクリックして、自由に書き込んでください。技術的な知識は不要です。
+
+#### データの間違いを報告する場合
+学会名、誤っている箇所、正しい内容を記載してください。
 
 ### データの追加・修正を提案する
 1. このリポジトリをフォーク（複製）してください。
