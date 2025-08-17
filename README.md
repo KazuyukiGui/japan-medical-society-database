@@ -2,7 +2,7 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-## 🔍 検索サイト
+## 検索サイト
 
 **[日本の医学会・専門医資格 検索データベース](https://sites.google.com/view/med-db-jp/)**  
 このデータベースを簡単に検索・閲覧できるWebサイトを公開しています。
@@ -31,27 +31,27 @@ This is a comprehensive master database of 199 Japanese medical societies and 13
 
 ## 活用事例
 
-### 🏥 病院での資格管理
+### 病院での資格管理
 - 医師の専門医資格の有効期限管理
 - 標榜科目と専門医資格の整合性確認
 - 新規採用医師の資格確認
 
-### 📊 データ分析
+### データ分析
 - 診療科別の専門医分布の分析
 - 医師の専門性の可視化
 - 地域医療計画の基礎データとして
 
-### 🏢 その他の活用
+### その他の活用
 - ヘルスケア企業での医師データベース構築
 - 医療系スタートアップでの医師マッチング
 - 研究機関での医療人材分析
 
 ## 利用方法 (Usage)
 
-### 🔍 Webサイトで検索する
+### Webサイトで検索する
 [検索サイト](https://sites.google.com/view/med-db-jp/)で学会名や資格名から簡単に検索できます。
 
-### 📥 CSVファイルを直接ダウンロードする
+### CSVファイルを直接ダウンロードする
 ```bash
 # 学会マスターをダウンロード
 curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/societies_master.csv
@@ -60,7 +60,7 @@ curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-data
 curl -O https://raw.githubusercontent.com/KazuyukiGui/japan-medical-society-database/main/data/qualifications_master.csv
 ```
 
-### 📊 Excel/Googleスプレッドシートでの利用例
+### Excel/Googleスプレッドシートでの利用例
 
 1. CSVファイルをダウンロード
 2. Excel/スプレッドシートで開く
@@ -122,7 +122,7 @@ print(internal_medicine_specialists[['資格ID', '資格名称']])
 
 ## 本プロジェクトへのご協力について
 
-### 💬 フィードバックをお待ちしています
+### フィードバックをお待ちしています
 
 #### 簡単な報告方法
 - 間違いを見つけた
